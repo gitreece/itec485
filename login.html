@@ -85,54 +85,45 @@
                                 $('[data-toggle="tooltip"]').tooltip();
                         });
                 </script>
-<div id="canvas-wrapper">
-<div id="navbar-wrapper">
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-<a class="navbar-brand p-0" href="/" title="Home"><img src="../static/images/logo.png" width="50" height="50" class="logo"></a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-navbar" aria-controls="site-navbar" aria-expanded="false" aria-label="Toggle navigation">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="site-navbar">
-<ul class="navbar-nav mr-auto">
-<li class="nav-item">
-<a class="nav-link" href="/about" title="About">About</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="/grades" title="Grades">Grades</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="/tools" title="Tools">Tools</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="/schedule/new" title="Schedule" style="z-index: 2;">Schedule</a>
-
-</li>
-
-<li class="nav-item" title="API">
- <a class="nav-link" href="https://api.planetterp.com">API</a>
-</li>
-
-
-<li class="nav-item">
-<a class="nav-link" href="#" title="Add Professor/TA" data-toggle="modal" data-target="#add-professor-modal" style="color: #9af99a;">Add Professor/TA</a>
-</li>
-</ul>
-<ul class="navbar-nav navbar-right mr-3">
-<li class="nav-item mr-3">
-<a class="nav-link" href="/login" title="Login / Register">Login / Register</a>
-</li>
-<li class="nav-item">
-<form action="/search" class="form-inline">
-<label for="header-search" style="display: none;">Search for a professor or course</label>
-<input id="header-search" class="form-control" type="search" name="query" placeholder="Search..." aria-label="Search for a course, professor, or teaching assistant">
-<button class="btn btn-primary" type="submit">Search</button>
-</form>
-</li>
-</ul>
-</div>
-</nav>
-</div>
-</div>
+                <div id="canvas-wrapper">
+                    <div id="navbar-wrapper">
+                        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary ">
+                            <a class="navbar-brand p-0" href="/index.html" title="Home"><img src="static/images/logo.png" width="50" height="50" class="logo"></a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-navbar" aria-controls="site-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="site-navbar">
+                            <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                            <a class="nav-link" href="/about.html" title="About">About</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="/buildings.html" title="Buildings">Buildings</a>
+                            </li>
+                            
+                            
+                            
+                            
+                            <li class="nav-item">
+                            <a class="nav-link" href="#" title="Request School/Building" data-toggle="modal" data-target="#add-professor-modal" style="color: #9af99a;">Request School/Building</a>
+                            </li>
+                            </ul>
+                            <ul class="nav navbar-nav m-auto">
+                            <li class="nav-item mr-3">
+                            <a class="nav-link" href="/login" title="Login / Register">Login / Register</a>
+                            </li>
+                            <li class="nav-item">
+                            <form action="/search" class="form-inline">
+                            <label for="header-search" style="display: none;">Search for a school or building</label>
+                            <input id="header-search" class="form-control ui-autocomplete-input" type="search" name="query" placeholder="Search..." aria-label="Search for a course, professor, or teaching assistant" autocomplete="off">
+                            <button class="btn btn-primary" type="submit">Search</button>
+                            </form>
+                            </li>
+                            </ul>
+                         </div>
+                       </nav>
+                    </div>
+                </div>
 <div class="modal fade" id="add-professor-modal" tabindex="-1" role="dialog" aria-labelledby="add-modal-label">
 <div class="modal-dialog" role="document">
 <div class="modal-content">
