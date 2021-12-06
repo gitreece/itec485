@@ -1,3 +1,7 @@
+<?php
+        include_once 'includes/dbh.inc.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,7 +71,7 @@
                 <a class="nav-link" href="/login" title="Login / Register">Login / Register</a>
                 </li>
                 <li class="nav-item">
-                <form action="/search" class="form-inline">
+                <form action='search.php' class="form-inline">
                 <label for="header-search" style="display: none;">Search for a school or building</label>
                 <input id="header-search" class="form-control ui-autocomplete-input" type="search" name="query" placeholder="Search..." aria-label="Search for a course, professor, or teaching assistant" autocomplete="off">
                 <button class="btn btn-primary" type="submit">Search</button>
@@ -85,12 +89,12 @@
         <label for="main-search" class="text-center" style="font-size: 1.75rem; font-weight: 500; margin-left: 37%; margin-right: 10%;">Search for your school/building.</label>
         
         <input type="search" id="main-search" name="query" class=" form-inline form-control form-control-lg w-50 ui-autocomplete-input" style="margin-left: 25%; margin-right: 10%;" placeholder="Search..." autocomplete="off">
-        <button type="submit" style="margin-left: 25%; margin-right: 10%;" class="btn btn-primary ml-3">Search</button>
+        <button type="submit" class="btn btn-primary ml-3" style="margin-left: 50%;">Search</button>
         </form>
         <br>
         <br>
 
-        <img src="static/images/stephens.jpg"  width="900" height="500" alt="Stephens Hall"></img>
+        <img src="static/images/stephens.jpg"  class="center" width="900" height="500" alt="Stephens Hall"></img>
         <br>
         <br>
 
@@ -102,28 +106,28 @@
                                 <small>(Glen Towers)</small>
                                 <br>
                                 <i class="fas fa-star" style="margin-top: 4px;">
-                                        :before
+                                        
                                 </i>
                                 <i class="far fa-star" style="margin-top: 4px;">
-                                        ::before
+                                      
                                 </i>
                                 <i class="fas fa-star" style="margin-top: 4px;">
-                                        ::before
+                                        
                                 </i>
                                 <i class="far fa-star" style="margin-top: 4px;">
-                                        ::before
+                                     
                                 </i>
                                 <i class="fas fa-star" style="margin-top: 4px;">
-                                        ::before
+                                     
                                 </i>
                                 <i class="far fa-star">
-                                        ::before
+                                       
                                 </i>
                                 <i class="far fa-star">
-                                        ::before
+                                        
                                 </i>
                                 <i class="far fa-star">
-                                        ::before
+                                    
                                 </i>
                                 <br>
                                 <blockquote>
