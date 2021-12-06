@@ -13,7 +13,7 @@
                 </script>
 <link rel="stylesheet" type="text/css" href="../static/css/rateyo.min.css">
 <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="../static/css/stylesheet.css?v=1.3">
+<link rel="stylesheet" type="text/css" href="../static/css/stylesheet.css">
 <title>Burdick Hall | Rate My Campus</title>
 <meta name="description"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -117,7 +117,7 @@
             <li class="nav-item">
             <form action='search.php' class="form-inline">
             <label for="header-search" style="display: none;">Search for a school or building</label>
-            <input id="header-search" class="form-control ui-autocomplete-input" type="search" name="query" placeholder="Search..." aria-label="Search for a course, professor, or teaching assistant" autocomplete="off">
+            <input id="header-search" class="form-control ui-autocomplete-input" type="search" name="query" placeholder="Search..." aria-label="Search for a building" autocomplete="off">
             <button class="btn btn-primary" type="submit">Search</button>
             </form>
             </li>
@@ -260,7 +260,9 @@
 <h5>Average rating: 5.00</h5>
 <span style="white-space: nowrap;">
 
-<i class="fas fa-star fa-2x"></i>
+<i class="fas fa-star fa-2x">
+
+</i>
 <i class="far fa-star fa-2x"></i>
 <i class="fas fa-star fa-2x"></i>
 <i class="far fa-star fa-2x"></i>
@@ -320,14 +322,14 @@
 <button class="btn btn-warning w-100" type="submit">Submit</button>
 </div>
 <div id="review-right-wrapper">
-<textarea name="review_text" id="review-text" class="form-control form-control-sm" placeholder="Please keep your review relevant to the professor's teaching..."></textarea>
+<textarea name="review_text" id="review-text" class="form-control form-control-sm" placeholder="Let it all out..."></textarea>
 <div style="font-size: 1rem; width: fit-content;" id="review-text-errors" class="invalid-feedback review-error"></div>
 </div>
 </div>
 <input type="hidden" name="form_type" id="form_type" value="review_prof">
 
 </form>
-<script type="cde8835547f5668d7588873a-text/javascript">
+<script type="text/javascript">
     $(function() {
         var multiplier;
 
@@ -461,403 +463,7 @@
 <span aria-hidden="true" style="float: left">&times;</span>
 </button>
 </div>
-<div class="modal-body text-center">
-<strong id="grade-statistics">Average GPA^: 3.30 between 89 students*</strong>
-<br />
-<label style="float: left;">
-include spring 2020 and spring 2021&nbsp;<i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" title="During the Spring 2020 and Spring 2021 semesters, students could choose to take some or their courses pass-fail mid-semester, which skews grade data aggregated across multiple semesters"></i>
-<input type="checkbox" id="includePFSemesters">
-</label>
-<span style="float: right;">
-<label for="grades-by-course">Lookup by course:</label>
-<select id="grades-by-course">
-<option value="All courses">All courses</option>
-<option value="ARTT370">ARTT370</option>
-<option value="ARTT479D">ARTT479D</option>
-<option value="CMSC101">CMSC101</option>
-</select>
-</span>
-<div id="grades-graphs">
-<div id="graph-wrapper">
-<canvas id="grades" class="grade-data" style="margin: 0 auto;"></canvas>
-<canvas id="gradesIncludingPFSemesters" style="margin: 0 auto; display: none;"></canvas>
-</div>
-</div>
-<div id="only-pfsemesters" style="display: none; margin-top: 5%; width: 80%;" class="alert alert-info error-alert text-center">
-<h5>This professor only has grade data for this course for Spring 2020 and Spring 2021. Click on the <code>include spring 2020 and spring 2021</code> checkbox above to check the grades for this professor for this course for Spring 2020 and Spring 2021.</h5>
-</div>
-<script type="cde8835547f5668d7588873a-text/javascript">
-                                                            // hack to make graphs look better on mobile devices. On mobile you have more vertical real estate
-                                                            // than horizontal, so when we generate our graph and stop when we reach the horizontal limit, it's
-                                                            // still not very tall. By making the aspect ratio 1:1 we get a taller graph which looks better.
-                                                            // The default aspect ratio for chartjs is, I believe, 2, so this is what we get on all other devices
-                                                            // (when aspectRatio is null).
-                                                            var aspectRatio = $(window).width() > 800 ? null : 1;
-                                                                var graph = document.getElementById("grades").getContext("2d");
-                                                                var gradesGraph = new Chart(graph, {
-                                                                        type: 'bar',
-                                                                        data: {
-                                                                                labels: ["A", "B", "C", "D", "F", "W", "other"],
-                                                                                datasets: [
-                                                                                        {
-                                                                                        label: "-",
-                                                                                        data: [19.10, 3.37, 0.00, 0.00],
-                                                                                        backgroundColor: [
-                                                                                                'rgba(58, 215, 65, .4)',
-                                                                                                'rgba(58, 215, 65, .4)',
-                                                                                                'rgba(58, 215, 65, .4)',
-                                                                                                'rgba(58, 215, 65, .4)'
-                                                                                        ],
-                                                                                        borderColor: [
-                                                                                                'rgba(29, 77, 0, 1)',
-                                                                                                'rgba(29, 77, 0, 1)',
-                                                                                                'rgba(29, 77, 0, 1)',
-                                                                                                'rgba(29, 77, 0, 1)'
-                                                                                        ],
-                                                                                        borderWidth: 2
-                                                                                        },
-                                                                                        {
-                                                                                        label: "",
-                                                                                        data: [30.34, 10.11, 2.25, 0.00, 3.37, 5.62, 2.25],
-                                                                                        backgroundColor: [
-                                                                                                'rgba(25, 140, 35, .5)',
-                                                                                                'rgba(25, 140, 35, .5)',
-                                                                                                'rgba(25, 140, 35, .5)',
-                                                                                                'rgba(25, 140, 35, .5)',
-                                                                                                'rgba(226, 0, 0, .7)',
-                                                                                                'rgba(226, 0, 0, .7)',
-                                                                                                'rgba(173, 173, 173, .4)',
-                                                                                        ],
-                                                                                        borderColor: [
-                                                                                                'rgba(29, 77, 0, 1)',
-                                                                                                'rgba(29, 77, 0, 1)',
-                                                                                                'rgba(29, 77, 0, 1)',
-                                                                                                'rgba(29, 77, 0, 1)',
-                                                                                                'rgba(196, 0, 0, 1)',
-                                                                                                'rgba(196, 0, 0, 1)',
-                                                                                                'rgba(29, 77, 0, 1)'
-                                                                                        ],
-                                                                                        borderWidth: 2
-                                                                                        },
-                                                                                        {
-                                                                                        label: "+",
-                                                                                        data: [14.61, 7.87, 1.12, 0.00],
-                                                                                        backgroundColor: [
-                                                                                                'rgba(6, 74, 12, .7)',
-                                                                                                'rgba(6, 74, 12, .7)',
-                                                                                                'rgba(6, 74, 12, .7)',
-                                                                                                'rgba(6, 74, 12, .7)'
-                                                                                        ],
-                                                                                        borderColor: [
-                                                                                                'rgba(29, 77, 0, 1)',
-                                                                                                'rgba(29, 77, 0, 1)',
-                                                                                                'rgba(29, 77, 0, 1)',
-                                                                                                'rgba(29, 77, 0, 1)'
-                                                                                        ],
-                                                                                        borderWidth: 2
-                                                                                        }
-                                                                                ]
-                                                                        },
-                                                                        options: {
-                                                                                aspectRatio: aspectRatio,
-                                                                                title: {
-                                                                                        display: true,
-                                                                                        text: "Mollye Bendell Grade Distribution"
-                                                                                },
-                                                                                scales: {
-                                                                                        xAxes: [{stacked: true}],
-                                                                                        yAxes: [{
-                                                                                                stacked: true,
-                                                                                                scaleLabel: {
-                                                                                                        display: true,
-                                                                                                        labelString: "% of students"
-                                                                                                }}
-                                                                                        ]
-                                                                                },
-                                                                                legend: {
-                                                                                        reverse: true
-                                                                                },
-                                                                                tooltips: {
-                                                                                        callbacks: {
-                                                                                                title: function(tooltipItem, data) {
-                                                                                                        return tooltipItem[0]['xLabel'] + data['datasets'][tooltipItem[0]['datasetIndex']]['label'];
-                                                                                                }
-                                                                                        }
-                                                                                }
-                                                                        }
-                                                                });
-                                                            
-                                                            var graphIncludingPFSemesters = document.getElementById("gradesIncludingPFSemesters").getContext("2d");
-                                                            var gradesGraphIncludingPFSemesters = new Chart(graphIncludingPFSemesters, {
-                                                                    type: 'bar',
-                                                                    data: {
-                                                                            labels: ["A", "B", "C", "D", "F", "W", "other"],
-                                                                            datasets: [
-                                                                                    {
-                                                                                    label: "-",
-                                                                                    data: [16.97, 3.03, 0.00, 0.00],
-                                                                                    backgroundColor: [
-                                                                                            'rgba(58, 215, 65, .4)',
-                                                                                            'rgba(58, 215, 65, .4)',
-                                                                                            'rgba(58, 215, 65, .4)',
-                                                                                            'rgba(58, 215, 65, .4)'
-                                                                                    ],
-                                                                                    borderColor: [
-                                                                                            'rgba(29, 77, 0, 1)',
-                                                                                            'rgba(29, 77, 0, 1)',
-                                                                                            'rgba(29, 77, 0, 1)',
-                                                                                            'rgba(29, 77, 0, 1)'
-                                                                                    ],
-                                                                                    borderWidth: 2
-                                                                                    },
-                                                                                    {
-                                                                                    label: "",
-                                                                                    data: [31.52, 7.27, 1.82, 0.61, 1.82, 3.03, 12.12],
-                                                                                    backgroundColor: [
-                                                                                            'rgba(25, 140, 35, .5)',
-                                                                                            'rgba(25, 140, 35, .5)',
-                                                                                            'rgba(25, 140, 35, .5)',
-                                                                                            'rgba(25, 140, 35, .5)',
-                                                                                            'rgba(226, 0, 0, .7)',
-                                                                                            'rgba(226, 0, 0, .7)',
-                                                                                            'rgba(173, 173, 173, .4)',
-                                                                                    ],
-                                                                                    borderColor: [
-                                                                                            'rgba(29, 77, 0, 1)',
-                                                                                            'rgba(29, 77, 0, 1)',
-                                                                                            'rgba(29, 77, 0, 1)',
-                                                                                            'rgba(29, 77, 0, 1)',
-                                                                                            'rgba(196, 0, 0, 1)',
-                                                                                            'rgba(196, 0, 0, 1)',
-                                                                                            'rgba(29, 77, 0, 1)'
-                                                                                    ],
-                                                                                    borderWidth: 2
-                                                                                    },
-                                                                                    {
-                                                                                    label: "+",
-                                                                                    data: [14.55, 6.67, 0.61, 0.00],
-                                                                                    backgroundColor: [
-                                                                                            'rgba(6, 74, 12, .7)',
-                                                                                            'rgba(6, 74, 12, .7)',
-                                                                                            'rgba(6, 74, 12, .7)',
-                                                                                            'rgba(6, 74, 12, .7)'
-                                                                                    ],
-                                                                                    borderColor: [
-                                                                                            'rgba(29, 77, 0, 1)',
-                                                                                            'rgba(29, 77, 0, 1)',
-                                                                                            'rgba(29, 77, 0, 1)',
-                                                                                            'rgba(29, 77, 0, 1)'
-                                                                                    ],
-                                                                                    borderWidth: 2
-                                                                                    }
-                                                                            ]
-                                                                    },
-                                                                    options: {
-                                                                            aspectRatio: aspectRatio,
-                                                                            title: {
-                                                                                    display: true,
-                                                                                    text: "Mollye Bendell Grade Distribution"
-                                                                            },
-                                                                            scales: {
-                                                                                    xAxes: [{stacked: true}],
-                                                                                    yAxes: [{
-                                                                                            stacked: true,
-                                                                                            scaleLabel: {
-                                                                                                    display: true,
-                                                                                                    labelString: "% of students"
-                                                                                            }}
-                                                                                    ]
-                                                                            },
-                                                                            legend: {
-                                                                                    reverse: true
-                                                                            },
-                                                                            tooltips: {
-                                                                                    callbacks: {
-                                                                                            title: function(tooltipItem, data) {
-                                                                                                    return tooltipItem[0]['xLabel'] + data['datasets'][tooltipItem[0]['datasetIndex']]['label'];
-                                                                                            }
-                                                                                    }
-                                                                            }
-                                                                    }
-                                                            });
-                
-                                                            /* From: https://stackoverflow.com/a/2901298 */
-                                                            function numberWithCommas(x) {
-                                                                    var parts = x.toString().split(".");
-                                                                    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                                                                    return parts.join(".");
-                                                            }
-                
-                                                            var course_grades = {};
-                
-                                                                course_grades['All courses'] = {'SUM(APLUS)': '14.61', 'SUM(A)': '30.34', 'SUM(AMINUS)': '19.10', 'SUM(BPLUS)': '7.87', 'SUM(B)': '10.11', 'SUM(BMINUS)': '3.37', 'SUM(CPLUS)': '1.12', 'SUM(C)': '2.25', 'SUM(CMINUS)': '0.00', 'SUM(DPLUS)': '0.00', 'SUM(D)': '0.00', 'SUM(DMINUS)': '0.00', 'SUM(F)': '3.37', 'SUM(W)': '5.62', 'SUM(OTHER)': '2.25', 'num_students': 89, 'course': 'All courses'};
-                                                            
-                                                            
-                                                                course_grades['ARTT370'] = {'course': 'ARTT370', 'SUM(APLUS)': '11.76', 'SUM(A)': '23.53', 'SUM(AMINUS)': '5.88', 'SUM(BPLUS)': '11.76', 'SUM(B)': '11.76', 'SUM(BMINUS)': '0.00', 'SUM(CPLUS)': '0.00', 'SUM(C)': '5.88', 'SUM(CMINUS)': '0.00', 'SUM(DPLUS)': '0.00', 'SUM(D)': '0.00', 'SUM(DMINUS)': '0.00', 'SUM(F)': '5.88', 'SUM(W)': '17.65', 'SUM(OTHER)': '5.88', 'num_students': 17, 'average_gpa': '2.64'};
-                                                            
-                                                            
-                                                                course_grades['ARTT479D'] = {'course': 'ARTT479D', 'SUM(APLUS)': '13.56', 'SUM(A)': '30.51', 'SUM(AMINUS)': '22.03', 'SUM(BPLUS)': '6.78', 'SUM(B)': '10.17', 'SUM(BMINUS)': '5.08', 'SUM(CPLUS)': '1.69', 'SUM(C)': '1.69', 'SUM(CMINUS)': '0.00', 'SUM(DPLUS)': '0.00', 'SUM(D)': '0.00', 'SUM(DMINUS)': '0.00', 'SUM(F)': '3.39', 'SUM(W)': '3.39', 'SUM(OTHER)': '1.69', 'num_students': 59, 'average_gpa': '3.37'};
-                                                            
-                                                            
-                                                                course_grades['CMSC101'] = {'course': 'CMSC101', 'SUM(APLUS)': '23.08', 'SUM(A)': '38.46', 'SUM(AMINUS)': '23.08', 'SUM(BPLUS)': '7.69', 'SUM(B)': '7.69', 'SUM(BMINUS)': '0.00', 'SUM(CPLUS)': '0.00', 'SUM(C)': '0.00', 'SUM(CMINUS)': '0.00', 'SUM(DPLUS)': '0.00', 'SUM(D)': '0.00', 'SUM(DMINUS)': '0.00', 'SUM(F)': '0.00', 'SUM(W)': '0.00', 'SUM(OTHER)': '0.00', 'num_students': 13, 'average_gpa': '3.80'};
-                                                            
-                                                            
-                                                            $('#includePFSemesters').on('change', function() {
-                                                                    updateCourseGradesGraph();
-                                                            });
-                
-                                                            // Change course on grades option
-                                                            $("#grades-by-course").on('change', function() {
-                                                                    updateCourseGradesGraph();
-                                                            });
-                
-                                                            function updateCourseGradesGraph() {
-                                                                    course_grades = {};
-                
-                                                                    var selected = $('#grades-by-course').val();
-                
-                                                                        if ($('#includePFSemesters').is(':checked')) {
-                                                                                    course_grades['All courses'] = {'SUM(APLUS)': '14.55', 'SUM(A)': '31.52', 'SUM(AMINUS)': '16.97', 'SUM(BPLUS)': '6.67', 'SUM(B)': '7.27', 'SUM(BMINUS)': '3.03', 'SUM(CPLUS)': '0.61', 'SUM(C)': '1.82', 'SUM(CMINUS)': '0.00', 'SUM(DPLUS)': '0.00', 'SUM(D)': '0.61', 'SUM(DMINUS)': '0.00', 'SUM(F)': '1.82', 'SUM(W)': '3.03', 'SUM(OTHER)': '12.12', 'num_students': 165, 'course': 'All courses'};
-                                                                                    course_grades['ARTT370'] = {'course': 'ARTT370', 'SUM(APLUS)': '13.85', 'SUM(A)': '38.46', 'SUM(AMINUS)': '9.23', 'SUM(BPLUS)': '6.15', 'SUM(B)': '4.62', 'SUM(BMINUS)': '1.54', 'SUM(CPLUS)': '0.00', 'SUM(C)': '3.08', 'SUM(CMINUS)': '0.00', 'SUM(DPLUS)': '0.00', 'SUM(D)': '1.54', 'SUM(DMINUS)': '0.00', 'SUM(F)': '1.54', 'SUM(W)': '4.62', 'SUM(OTHER)': '15.38', 'num_students': 65, 'average_gpa': '3.42'};
-                                                                                    course_grades['ARTT479D'] = {'course': 'ARTT479D', 'SUM(APLUS)': '13.79', 'SUM(A)': '25.29', 'SUM(AMINUS)': '21.84', 'SUM(BPLUS)': '6.90', 'SUM(B)': '9.20', 'SUM(BMINUS)': '4.60', 'SUM(CPLUS)': '1.15', 'SUM(C)': '1.15', 'SUM(CMINUS)': '0.00', 'SUM(DPLUS)': '0.00', 'SUM(D)': '0.00', 'SUM(DMINUS)': '0.00', 'SUM(F)': '2.30', 'SUM(W)': '2.30', 'SUM(OTHER)': '11.49', 'num_students': 87, 'average_gpa': '3.44'};
-                                                                                    course_grades['CMSC101'] = {'course': 'CMSC101', 'SUM(APLUS)': '23.08', 'SUM(A)': '38.46', 'SUM(AMINUS)': '23.08', 'SUM(BPLUS)': '7.69', 'SUM(B)': '7.69', 'SUM(BMINUS)': '0.00', 'SUM(CPLUS)': '0.00', 'SUM(C)': '0.00', 'SUM(CMINUS)': '0.00', 'SUM(DPLUS)': '0.00', 'SUM(D)': '0.00', 'SUM(DMINUS)': '0.00', 'SUM(F)': '0.00', 'SUM(W)': '0.00', 'SUM(OTHER)': '0.00', 'num_students': 13, 'average_gpa': '3.80'};
-                                                                        }
-                                                                        else {
-                                                                                    course_grades['All courses'] = {'SUM(APLUS)': '14.61', 'SUM(A)': '30.34', 'SUM(AMINUS)': '19.10', 'SUM(BPLUS)': '7.87', 'SUM(B)': '10.11', 'SUM(BMINUS)': '3.37', 'SUM(CPLUS)': '1.12', 'SUM(C)': '2.25', 'SUM(CMINUS)': '0.00', 'SUM(DPLUS)': '0.00', 'SUM(D)': '0.00', 'SUM(DMINUS)': '0.00', 'SUM(F)': '3.37', 'SUM(W)': '5.62', 'SUM(OTHER)': '2.25', 'num_students': 89, 'course': 'All courses'};
-                                                                                    course_grades['ARTT370'] = {'course': 'ARTT370', 'SUM(APLUS)': '11.76', 'SUM(A)': '23.53', 'SUM(AMINUS)': '5.88', 'SUM(BPLUS)': '11.76', 'SUM(B)': '11.76', 'SUM(BMINUS)': '0.00', 'SUM(CPLUS)': '0.00', 'SUM(C)': '5.88', 'SUM(CMINUS)': '0.00', 'SUM(DPLUS)': '0.00', 'SUM(D)': '0.00', 'SUM(DMINUS)': '0.00', 'SUM(F)': '5.88', 'SUM(W)': '17.65', 'SUM(OTHER)': '5.88', 'num_students': 17, 'average_gpa': '2.64'};
-                                                                                    course_grades['ARTT479D'] = {'course': 'ARTT479D', 'SUM(APLUS)': '13.56', 'SUM(A)': '30.51', 'SUM(AMINUS)': '22.03', 'SUM(BPLUS)': '6.78', 'SUM(B)': '10.17', 'SUM(BMINUS)': '5.08', 'SUM(CPLUS)': '1.69', 'SUM(C)': '1.69', 'SUM(CMINUS)': '0.00', 'SUM(DPLUS)': '0.00', 'SUM(D)': '0.00', 'SUM(DMINUS)': '0.00', 'SUM(F)': '3.39', 'SUM(W)': '3.39', 'SUM(OTHER)': '1.69', 'num_students': 59, 'average_gpa': '3.37'};
-                                                                                    course_grades['CMSC101'] = {'course': 'CMSC101', 'SUM(APLUS)': '23.08', 'SUM(A)': '38.46', 'SUM(AMINUS)': '23.08', 'SUM(BPLUS)': '7.69', 'SUM(B)': '7.69', 'SUM(BMINUS)': '0.00', 'SUM(CPLUS)': '0.00', 'SUM(C)': '0.00', 'SUM(CMINUS)': '0.00', 'SUM(DPLUS)': '0.00', 'SUM(D)': '0.00', 'SUM(DMINUS)': '0.00', 'SUM(F)': '0.00', 'SUM(W)': '0.00', 'SUM(OTHER)': '0.00', 'num_students': 13, 'average_gpa': '3.80'};
-                                                                        }
-                                                                    
-                                                                    var grades = course_grades[selected];
-                
-                                                                    $("html").find('#graph-wrapper').remove();
-                
-                                                                    console.log(grades);
-                
-                                                                    if (grades == null) {
-                                                                            $('#only-pfsemesters').show();
-                                                                    }
-                                                                    else {
-                                                                            $("#grades-graphs").append('<div id="graph-wrapper"><canvas id="grades" style="margin: 0 auto;"></canvas></div>');
-                
-                                                                            $('#only-pfsemesters').hide();
-                
-                                                                            var graph = document.getElementById("grades").getContext("2d");
-                                                                            var gradesGraph = new Chart(graph, {
-                                                                                    type: 'bar',
-                                                                                    data: {
-                                                                                            labels: ["A", "B", "C", "D", "F", "W", "other"],
-                                                                                            datasets: [
-                                                                                                    {
-                                                                                                    label: "-",
-                                                                                                    data: [grades['SUM(AMINUS)'], grades['SUM(BMINUS)'], grades['SUM(CMINUS)'], grades['SUM(DMINUS)']],
-                                                                                                    backgroundColor: [
-                                                                                                            'rgba(58, 215, 65, .4)',
-                                                                                                            'rgba(58, 215, 65, .4)',
-                                                                                                            'rgba(58, 215, 65, .4)',
-                                                                                                            'rgba(58, 215, 65, .4)'
-                                                                                                    ],
-                                                                                                    borderColor: [
-                                                                                                            'rgba(29, 77, 0, 1)',
-                                                                                                            'rgba(29, 77, 0, 1)',
-                                                                                                            'rgba(29, 77, 0, 1)',
-                                                                                                            'rgba(29, 77, 0, 1)'
-                                                                                                    ],
-                                                                                                    borderWidth: 2
-                                                                                                    },
-                                                                                                    {
-                                                                                                    label: "",
-                                                                                                    data: [grades['SUM(A)'], grades['SUM(B)'], grades['SUM(C)'], grades['SUM(D)'], grades['SUM(F)'], grades['SUM(W)'], grades['SUM(OTHER)']],
-                                                                                                    backgroundColor: [
-                                                                                                            'rgba(25, 140, 35, .5)',
-                                                                                                            'rgba(25, 140, 35, .5)',
-                                                                                                            'rgba(25, 140, 35, .5)',
-                                                                                                            'rgba(25, 140, 35, .5)',
-                                                                                                            'rgba(226, 0, 0, .7)',
-                                                                                                            'rgba(226, 0, 0, .7)',
-                                                                                                            'rgba(173, 173, 173, .4)',
-                                                                                                    ],
-                                                                                                    borderColor: [
-                                                                                                            'rgba(29, 77, 0, 1)',
-                                                                                                            'rgba(29, 77, 0, 1)',
-                                                                                                            'rgba(29, 77, 0, 1)',
-                                                                                                            'rgba(29, 77, 0, 1)',
-                                                                                                            'rgba(196, 0, 0, 1)',
-                                                                                                            'rgba(196, 0, 0, 1)',
-                                                                                                            'rgba(29, 77, 0, 1)'
-                                                                                                    ],
-                                                                                                    borderWidth: 2
-                                                                                                    },
-                                                                                                    {
-                                                                                                    label: "+",
-                                                                                                    data: [grades['SUM(APLUS)'], grades['SUM(BPLUS)'], grades['SUM(CPLUS)'], grades['SUM(DPLUS)']],
-                                                                                                    backgroundColor: [
-                                                                                                            'rgba(6, 74, 12, .7)',
-                                                                                                            'rgba(6, 74, 12, .7)',
-                                                                                                            'rgba(6, 74, 12, .7)',
-                                                                                                            'rgba(6, 74, 12, .7)'
-                                                                                                    ],
-                                                                                                    borderColor: [
-                                                                                                            'rgba(29, 77, 0, 1)',
-                                                                                                            'rgba(29, 77, 0, 1)',
-                                                                                                            'rgba(29, 77, 0, 1)',
-                                                                                                            'rgba(29, 77, 0, 1)'
-                                                                                                    ],
-                                                                                                    borderWidth: 2
-                                                                                                    }
-                                                                                            ]
-                                                                                    },
-                                                                                    options: {
-                                                                                            aspectRatio: aspectRatio,
-                                                                                            title: {
-                                                                                                    display: true,
-                                                                                                    text: (selected === "All courses") ? "Mollye Bendell Grade Distribution" : "Mollye Bendell Grade Distribution for " + selected
-                                                                                            },
-                                                                                            scales: {
-                                                                                                    xAxes: [{stacked: true}],
-                                                                                                    yAxes: [{
-                                                                                                            stacked: true,
-                                                                                                            scaleLabel: {
-                                                                                                                    display: true,
-                                                                                                                    labelString: "% of students"
-                                                                                                            }}
-                                                                                                    ]
-                                                                                            },
-                                                                                            legend: {
-                                                                                                    reverse: true
-                                                                                            },
-                                                                                            animation: {
-                                                                                                    duration: 0
-                                                                                            },
-                                                                                            tooltips: {
-                                                                                                    callbacks: {
-                                                                                                            title: function(tooltipItem, data) {
-                                                                                                                    return tooltipItem[0]['xLabel'] + data['datasets'][tooltipItem[0]['datasetIndex']]['label'];
-                                                                                                            }
-                                                                                                    }
-                                                                                            }
-                                                                                    }
-                                                                            });
-                
-                                                                            if (selected === "All courses") {
-                                                                                    if ($('#includePFSemesters').is(':checked')) {
-                                                                                            $('#grade-statistics').text("Average GPA^: 3.47 between 165 students*")
-                                                                                    }
-                                                                                    else {
-                                                                                            $('#grade-statistics').text("Average GPA^: 3.30 between 89 students*")
-                                                                                    }
-                                                                            }
-                                                                            else {
-                                                                                    console.log('hi');
-                                                                                    $('#grade-statistics').text("Average GPA^ for " + selected + ": " + grades.average_gpa + " between " + numberWithCommas(grades.num_students) + " students*")
-                                                                            }
-                                                                    }
-                                                            }
-                                                    </script>
-<small>^ "W"s are considered to be 0.0 quality points. "Other" grades are not factored into the average GPA calculation.</small><br />
-<small>* Grade data is not guaranteed to be correct.</small>
-</div>
+
 </div>
 </div>
 </div>
