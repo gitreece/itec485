@@ -1,0 +1,957 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109898068-1" type="cde8835547f5668d7588873a-text/javascript"></script>
+<script type="cde8835547f5668d7588873a-text/javascript">
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+
+                        gtag('config', 'UA-109898068-1');
+                </script>
+<link rel="stylesheet" type="text/css" href="../static/css/rateyo.min.css">
+<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../static/css/stylesheet.css?v=1.3">
+<title>Burdick Hall | Rate My Campus</title>
+<meta name="description"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico">
+<script type="text/javascript" src="../static/js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="../static/js/jquery-ui-1.12.1.min.js"></script>
+<script type="text/javascript" src="../static/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="../static/js/rateyo.min.js"></script>
+<script type="text/javascript" src="../static/js/rating.js?v=1.1"></script>
+<script type="text/javascript" src="../static/js/iziToast.min.js?v=1.1"></script>
+<link rel="stylesheet" type="text/css" href="../static/css/jquery-ui-1.12.1.min.css">
+<link rel="stylesheet" type="text/css" href="../static/css/jquery-autocomplete.css">
+<link rel="stylesheet" type="text/css" href="../static/css/rateyo.min.css">
+<link rel="stylesheet" type="text/css" href="../static/css/iziToast.min.css">
+<link rel="stylesheet" type="text/css" href="../static/css/progressbar.css">
+<link rel="stylesheet" type="text/css" href="../static/fontawesome-5.15.3/css/all.min.css">
+
+<script type="text/javascript">
+                        // (function(d, s, id) {
+                        // var js, fjs = d.getElementsByTagName(s)[0];
+                        //      if (d.getElementById(id)) return;
+                        //      js = d.createElement(s); js.id = id;
+                        //      js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=396580890766412';
+                        //      fjs.parentNode.insertBefore(js, fjs);
+                        // }(document, 'script', 'facebook-jssdk'));
+
+
+                        /* Track outbound clicks */
+                        /* from: https://support.google.com/analytics/answer/7478520 */
+                        var trackOutboundLink = function(url) {
+                                gtag('event', 'click', {
+                                        'event_category': 'outbound',
+                                        'event_label': url,
+                                        'transport_type': 'beacon'
+                                        // 'event_callback': function(){document.location = url;}
+                          });
+                        }
+
+                        /* Modified from: https://millionclues.com/internet/tracking-outbound-links-google-analytics/ (partially from https://stackoverflow.com/a/8496919/8255629) */
+                        function onclickCallback(e) {
+                                var e = window.e || e;
+
+                                var target = e.target;
+
+                                /* If clicked on an image, get the parent element, which
+                                   should be an anchor element */
+                                if (target.tagName === 'IMG') {
+                                        target = target.parentElement;
+                                }
+
+                                if ((target.tagName !== 'A') || (target.host == window.location.host)) {
+                                        return;
+                                }
+
+                                trackOutboundLink(target); // GA event tracker
+                        }
+
+                        if (document.addEventListener) {
+                                document.addEventListener('click', onclickCallback, false);
+                        }
+                        else {
+                                document.attachEvent('onclick', onclickCallback);
+                        }
+                </script>
+
+<script type="text/javascript">
+                        $(function () {
+                                $('[data-toggle="tooltip"]').tooltip();
+                        });
+                </script>
+<div id="canvas-wrapper">
+    <div id="navbar-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary ">
+            <a class="navbar-brand p-0" href="/index.html" title="Home"><img src="static/images/logo.png" width="50" height="50" class="logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-navbar" aria-controls="site-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="site-navbar">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="/about.html" title="About">About</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/buildings.html" title="Buildings">Buildings</a>
+            </li>
+            
+            
+            
+            
+            <li class="nav-item">
+            <a class="nav-link" href="#" title="Request School/Building" data-toggle="modal" data-target="#add-professor-modal" style="color: #9af99a;">Request School/Building</a>
+            </li>
+            </ul>
+            <ul class="nav navbar-nav m-auto">
+            <li class="nav-item mr-3">
+            <a class="nav-link" href="/login" title="Login / Register">Login / Register</a>
+            </li>
+            <li class="nav-item">
+            <form action='search.php' class="form-inline">
+            <label for="header-search" style="display: none;">Search for a school or building</label>
+            <input id="header-search" class="form-control ui-autocomplete-input" type="search" name="query" placeholder="Search..." aria-label="Search for a course, professor, or teaching assistant" autocomplete="off">
+            <button class="btn btn-primary" type="submit">Search</button>
+            </form>
+            </li>
+            </ul>
+         </div>
+       </nav>
+    </div>
+</div>
+
+<script type="text/javascript">
+                        $(function() {
+                                $("#header-search").autocomplete({
+                                        minLength: 3,
+                                        source: function(request, response) {
+                                                $.ajax({
+                                                        url: '/',
+                                                        type: "POST",
+                                                        dataType: 'json',
+                                                        data: {
+                                                                'query': request.term
+                                                        },
+                                                        success: function(data) {
+                                                                response(data);
+                                                        }
+                                                })
+                                        },
+                                        select: function(event, ui) {
+                                                var location = "/" + ui.item.value;
+                                                ui.item.value = ui.item.label;
+                                                window.location.href = location;
+                                        }
+                                });
+                        });
+                </script>
+<script type="cde8835547f5668d7588873a-text/javascript">
+                        // setTimeout(function() {
+                        //      iziToast.settings({
+                        //              timeout: 0
+                        //      });
+
+                        //      iziToast.show({
+                        //              theme: 'dark',
+                        //              icon: 'fas fa-exclamation-circle',
+                        //              title: "UMD Student?",
+                        //              message: "Consider reviewing your professors!<br />Try searching for one in the search<br />bar on the top right.",
+                        //              position: 'bottomRight',
+                        //              layout: 2
+                        //      });
+                        // }, 15000); // 15 seconds
+
+                        // setTimeout(function() {
+                        //      iziToast.settings({
+                        //              timeout: 0
+                        //      });
+
+                        //      iziToast.show({
+                        //              id: 'apply-team',
+                        //              theme: 'dark',
+                        //              icon: 'fas fa-pencil',
+                        //              title: "Interested in business, marketing, or journalism?",
+                        //              message: "Or anything else at all? Apply to join the PlanetTerp team! Click here.",
+                        //              position: 'bottomRight',
+                        //              layout: 2,
+                        //              onOpened: function() {
+                        //                      $('#apply-team').on('click', function(e) {
+                        //                              if (e.target.className !== 'iziToast-close') {
+                        //                                      window.open('https://bit.ly/planetterp-team');
+                        //                              }
+                        //                      });
+                        //              }
+                        //      });
+                        // }, 5000); // 5 seconds
+                        // setTimeout(function() {
+                        //      iziToast.settings({
+                        //              timeout: 0
+                        //      });
+                        //      iziToast.show({
+                        //              id: 'shirts',
+                        //              theme: 'dark',
+                        //              icon: 'fas fa-user',
+                        //              title: "Get a PlanetTerp T-shirt!",
+                        //              message: "",
+                        //              position: 'bottomRight',
+                        //              layout: 2,
+                        //              onOpened: function() {
+                        //                      $('#shirts').on('click', function(e) {
+                        //                              if (e.target.className !== 'iziToast-close') {
+                        //                                      window.open('https://bit.ly/planetterp-shirt');
+                        //                              }
+                        //                      });
+                        //              }
+                        //      });
+                        // }, 5000); // 5 seconds
+                        // setTimeout(function() {
+                        //      iziToast.settings({
+                        //              timeout: 0
+                        //      });
+                        //      iziToast.show({
+                        //              id: 'venmo-donate',
+                        //              theme: 'dark',
+                        //              image: '/static/images/venmo.svg',
+                        //              title: "Donate on Venmo",
+                        //              message: "Buy us a drink at cstone (and help us pay for the<br />costs of running the site) on Venmo @PlanetTerp",
+                        //              position: 'bottomRight',
+                        //              layout: 2,
+                        //              onOpened: function() {
+                        //                      $('#venmo-donate').on('click', function(e) {
+                        //                              if (e.target.className !== 'iziToast-close') {
+                        //                                      window.open('https://venmo.com/planetterp');
+                        //                              }
+                        //                      });
+                        //              }
+                        //      });
+                        // }, 5000); // 5 seconds
+                </script>
+<style type="text/css">
+                        @media (min-width: 800px) {
+                                .iziToast, .iziToast-title {
+                                        width: 430px;
+                                }
+                        }
+                </style>
+<script type="cde8835547f5668d7588873a-text/javascript">
+                        function onProfileSettingsClick() {
+                                // Allows user to switch to settings page from navbar dropdown when already on the profile page.
+                                // Without this the settings link in the navbar dropdown won't be able to switch you from
+                                // 'your reviews' to 'settings'. See also https://stackoverflow.com/a/19170628
+                                location.hash = "settings"
+                                location.reload();
+                        }
+                </script>
+<script type="cde8835547f5668d7588873a-text/javascript" src="../static/js/jquery-toggle.js"></script>
+<script type="cde8835547f5668d7588873a-text/javascript" src="../static/js/review-table.js"></script>
+<br />
+<div class="container mw-100 px-5">
+<div class="row">
+<div class="col-xs-12 col-sm-6 col-md-6 offset-md-1">
+<h1 class="professor-header"><strong>Burdick Hall</strong></h1>
+<h5 id="num-reviews"></h5>
+<h5>Average rating: 5.00</h5>
+<span style="white-space: nowrap;">
+
+<i class="fas fa-star fa-2x"></i>
+<i class="far fa-star fa-2x"></i>
+<i class="fas fa-star fa-2x"></i>
+<i class="far fa-star fa-2x"></i>
+<i class="fas fa-star fa-2x"></i>
+<i class="far fa-star fa-2x"></i>
+<i class="fas fa-star fa-2x"></i>
+<i class="far fa-star fa-2x"></i>
+<i class="fas fa-star fa-2x"></i>
+<i class="far fa-star fa-2x"></i>
+<style>
+                                                    i.fas.fa-star.professor-rating:after {
+                                                            width: 100.0%;
+                                                            left: 0.0%;
+                                                    }
+                                            </style>
+</span>
+</div>
+
+</div>
+</div>
+<div class="review-container mb-3" style="text-align: center;">
+<button id="review-btn" class="btn btn-primary" style="animation: 0.5s linear 0s 1 normal forwards running opening;">Review this building</button>
+<div id="review-form-container" style="display: grid;">
+
+    <form method="POST" id="building-form">
+
+        <div id="form-success" class="alert alert-success text-center">
+            <span class="my-0 close-btn float-right fas fa-times"></span>
+    
+            <strong>Successfully submitted review.</strong> We will verify your review soon.
+<br />
+        </div>
+
+<div id="other-errors" class="alert alert-danger" style="cursor: default;">
+<span class="my-0 close-btn float-right fas fa-times"></span>
+<div></div>
+</div>
+<div style="border-radius: 0;" class="alert alert-primary center-text info-alert w-100" role="alert">
+<strong>Note:</strong> <a href="/login" target="_blank">Register</a> to save your reviews to an account and to put a username next to your reviews
+</div>
+<div class="p-2">
+<div id="review-left-wrapper" class="noselect">
+<input type="hidden" name="slug" value="bendell"></input>
+
+<div id="course-errors" class="invalid-feedback review-error text-left"></div>
+<div id="other-course-container" style="display: none;" class="pt-3">
+<input class="form-control form-control-sm" id="other-course" name="other_course" type="text" size="10" placeholder="Please Specify...">
+<div id="other-course-errors" class="invalid-feedback review-error text-left"></div>
+</div>
+
+
+<div class="py-3">
+<div id="rateYo" style="padding: 0"></div>
+<div id="rating-errors" class="invalid-feedback review-error text-left"></div>
+</div>
+<input type="hidden" name="rating" id="rating"></input>
+<button class="btn btn-warning w-100" type="submit">Submit</button>
+</div>
+<div id="review-right-wrapper">
+<textarea name="review_text" id="review-text" class="form-control form-control-sm" placeholder="Please keep your review relevant to the professor's teaching..."></textarea>
+<div style="font-size: 1rem; width: fit-content;" id="review-text-errors" class="invalid-feedback review-error"></div>
+</div>
+</div>
+<input type="hidden" name="form_type" id="form_type" value="review_prof">
+
+</form>
+<script type="cde8835547f5668d7588873a-text/javascript">
+    $(function() {
+        var multiplier;
+
+        multiplier = 3.1;
+        $("#other-errors").css({"position" : "absolute", "z-index" : "1", "cursor" : "default"});
+        $("#review-right-wrapper > textarea").height("11.5rem");
+        $("#review-right-wrapper > textarea").css("border-bottom-left-radius", "0.25rem");
+        var init_starWidth = ((window.innerWidth * multiplier)/100) + "px";
+        $("#rateYo").rateYo("option", "starWidth", init_starWidth);
+    });
+
+    $(".close-btn").click(function() {
+        $(this).parent().slideToggle(500);
+    });
+
+    $(window).resize(function() {
+        var starWidth = $("#review-left-wrapper").width() / 5;
+
+        if (starWidth < 20) {
+            starWidth = 20;
+        }
+        $("#rateYo").rateYo("option", "starWidth", starWidth + "px");
+    });
+
+    $("#professor-form").submit(
+        function(e) {
+            var data = {}
+
+            var dataArr = $("#professor-form :input").serializeArray();
+            dataArr.forEach(function(entry) {
+                if (entry.value == "") {
+                    entry.value = null;
+                }
+                data[entry.name] = entry.value;
+            });
+
+            // jquery only includes checkboxes in serializeArray when they're checked, so
+            // manually include it if it's not there (and convert to booleans while we're at it).
+            if (!("anonymous" in data)) {
+                data["anonymous"] = false
+            } else {
+                data["anonymous"] = true
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "/add_review",
+                data: JSON.stringify(data),
+                success: function(data) {
+                    $("#review-text").val("");
+                    $("#course").val("");
+                    $("#grade").val("");
+                    $(".review-error").html("");
+                    $("#name").val("");
+                    $("#type").val("");
+                    $("#other-course-container").hide();
+                    $("#rateYo").rateYo("rating", 0);
+                    $("#rateYo").css("border-style", "none");
+                    $("#professor-form :input").removeClass("is-invalid");
+
+                    $(".other-course").hide();
+                    $("#other-course").val("");
+                    
+                    $("#form-success").hide().slideToggle(1000);
+                },
+                error: function(data) {
+                    var errors = JSON.parse(data.responseText);
+                    var fieldList = ["review-text", "course", "grade", "other-course"];
+
+                    fieldList.forEach(function(key) {
+                        // the json response uses underscores in place of dashes (dashes aren't valid
+                        // python identifiers), so replace with underscores when looking for them.
+                        let indexKey = key.replace("-", "_")
+                        if (errors[indexKey] != null) {
+                            $(`#${key}-errors`).html(errors[indexKey]);
+                            $(`#${key}`).addClass("is-invalid");
+                        } else {
+                            $(`#${key}-errors`).html("");
+                            $(`#${key}`).removeClass("is-invalid");
+                        }
+                    });
+
+                    if (errors["rating"] != null) {
+                        $("#rateYo").css({"border-style" : "solid", "border-width" : "0.1rem", "border-radius" : "0.2rem", "border-color" : "#dc3545"});
+                        $("#rating-errors").html(errors["rating"]);
+                        $("#rating-errors").show(errors["rating"]);
+                    } else {
+                        $("#rateYo").css("border-style", "none");
+                        $("#rating-errors").html("");
+                        $("#rating-errors").hide(errors["rating"]);
+                    }
+
+                    if (errors["other_errors"] != null) {
+                        $("#other-errors div").html(errors["other_errors"]);
+                        $("#other-errors").hide().slideToggle(1000);
+                    }
+                }
+            });
+        e.preventDefault();
+    });
+
+</script>
+</div>
+</div>
+<div>
+ <div class="input-group ml-3">
+<div class="input-group-prepend">
+<label class="input-group-text" for="course-select" style="border-bottom-left-radius: 0;">Sort By:</label>
+</div>
+<select name="course-select" id="course-select" class="custom-select form-control">
+<option>Course</option>
+<option>ARTT479D</option>
+</select>
+<div id="rating-sort" class="input-group-append">
+<select name="rating-select" id="rating-select" class="d-none">
+<option value="0">Rating</option>
+<option value="1">Rating</option>
+<option value="2">Rating</option>
+ </select>
+</div>
+</div>
+</div>
+<div id="reviews-table-container"></div>
+<script type="cde8835547f5668d7588873a-text/javascript" src="../static/js/chart.min.js"></script>
+<div class="modal fade" id="grades-modal" tabindex="-1" role="dialog" aria-labelledby="grades-modal-label">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="grades-modal-label">Grades</h4>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true" style="float: left">&times;</span>
+</button>
+</div>
+<div class="modal-body text-center">
+<strong id="grade-statistics">Average GPA^: 3.30 between 89 students*</strong>
+<br />
+<label style="float: left;">
+include spring 2020 and spring 2021&nbsp;<i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" title="During the Spring 2020 and Spring 2021 semesters, students could choose to take some or their courses pass-fail mid-semester, which skews grade data aggregated across multiple semesters"></i>
+<input type="checkbox" id="includePFSemesters">
+</label>
+<span style="float: right;">
+<label for="grades-by-course">Lookup by course:</label>
+<select id="grades-by-course">
+<option value="All courses">All courses</option>
+<option value="ARTT370">ARTT370</option>
+<option value="ARTT479D">ARTT479D</option>
+<option value="CMSC101">CMSC101</option>
+</select>
+</span>
+<div id="grades-graphs">
+<div id="graph-wrapper">
+<canvas id="grades" class="grade-data" style="margin: 0 auto;"></canvas>
+<canvas id="gradesIncludingPFSemesters" style="margin: 0 auto; display: none;"></canvas>
+</div>
+</div>
+<div id="only-pfsemesters" style="display: none; margin-top: 5%; width: 80%;" class="alert alert-info error-alert text-center">
+<h5>This professor only has grade data for this course for Spring 2020 and Spring 2021. Click on the <code>include spring 2020 and spring 2021</code> checkbox above to check the grades for this professor for this course for Spring 2020 and Spring 2021.</h5>
+</div>
+<script type="cde8835547f5668d7588873a-text/javascript">
+                                                            // hack to make graphs look better on mobile devices. On mobile you have more vertical real estate
+                                                            // than horizontal, so when we generate our graph and stop when we reach the horizontal limit, it's
+                                                            // still not very tall. By making the aspect ratio 1:1 we get a taller graph which looks better.
+                                                            // The default aspect ratio for chartjs is, I believe, 2, so this is what we get on all other devices
+                                                            // (when aspectRatio is null).
+                                                            var aspectRatio = $(window).width() > 800 ? null : 1;
+                                                                var graph = document.getElementById("grades").getContext("2d");
+                                                                var gradesGraph = new Chart(graph, {
+                                                                        type: 'bar',
+                                                                        data: {
+                                                                                labels: ["A", "B", "C", "D", "F", "W", "other"],
+                                                                                datasets: [
+                                                                                        {
+                                                                                        label: "-",
+                                                                                        data: [19.10, 3.37, 0.00, 0.00],
+                                                                                        backgroundColor: [
+                                                                                                'rgba(58, 215, 65, .4)',
+                                                                                                'rgba(58, 215, 65, .4)',
+                                                                                                'rgba(58, 215, 65, .4)',
+                                                                                                'rgba(58, 215, 65, .4)'
+                                                                                        ],
+                                                                                        borderColor: [
+                                                                                                'rgba(29, 77, 0, 1)',
+                                                                                                'rgba(29, 77, 0, 1)',
+                                                                                                'rgba(29, 77, 0, 1)',
+                                                                                                'rgba(29, 77, 0, 1)'
+                                                                                        ],
+                                                                                        borderWidth: 2
+                                                                                        },
+                                                                                        {
+                                                                                        label: "",
+                                                                                        data: [30.34, 10.11, 2.25, 0.00, 3.37, 5.62, 2.25],
+                                                                                        backgroundColor: [
+                                                                                                'rgba(25, 140, 35, .5)',
+                                                                                                'rgba(25, 140, 35, .5)',
+                                                                                                'rgba(25, 140, 35, .5)',
+                                                                                                'rgba(25, 140, 35, .5)',
+                                                                                                'rgba(226, 0, 0, .7)',
+                                                                                                'rgba(226, 0, 0, .7)',
+                                                                                                'rgba(173, 173, 173, .4)',
+                                                                                        ],
+                                                                                        borderColor: [
+                                                                                                'rgba(29, 77, 0, 1)',
+                                                                                                'rgba(29, 77, 0, 1)',
+                                                                                                'rgba(29, 77, 0, 1)',
+                                                                                                'rgba(29, 77, 0, 1)',
+                                                                                                'rgba(196, 0, 0, 1)',
+                                                                                                'rgba(196, 0, 0, 1)',
+                                                                                                'rgba(29, 77, 0, 1)'
+                                                                                        ],
+                                                                                        borderWidth: 2
+                                                                                        },
+                                                                                        {
+                                                                                        label: "+",
+                                                                                        data: [14.61, 7.87, 1.12, 0.00],
+                                                                                        backgroundColor: [
+                                                                                                'rgba(6, 74, 12, .7)',
+                                                                                                'rgba(6, 74, 12, .7)',
+                                                                                                'rgba(6, 74, 12, .7)',
+                                                                                                'rgba(6, 74, 12, .7)'
+                                                                                        ],
+                                                                                        borderColor: [
+                                                                                                'rgba(29, 77, 0, 1)',
+                                                                                                'rgba(29, 77, 0, 1)',
+                                                                                                'rgba(29, 77, 0, 1)',
+                                                                                                'rgba(29, 77, 0, 1)'
+                                                                                        ],
+                                                                                        borderWidth: 2
+                                                                                        }
+                                                                                ]
+                                                                        },
+                                                                        options: {
+                                                                                aspectRatio: aspectRatio,
+                                                                                title: {
+                                                                                        display: true,
+                                                                                        text: "Mollye Bendell Grade Distribution"
+                                                                                },
+                                                                                scales: {
+                                                                                        xAxes: [{stacked: true}],
+                                                                                        yAxes: [{
+                                                                                                stacked: true,
+                                                                                                scaleLabel: {
+                                                                                                        display: true,
+                                                                                                        labelString: "% of students"
+                                                                                                }}
+                                                                                        ]
+                                                                                },
+                                                                                legend: {
+                                                                                        reverse: true
+                                                                                },
+                                                                                tooltips: {
+                                                                                        callbacks: {
+                                                                                                title: function(tooltipItem, data) {
+                                                                                                        return tooltipItem[0]['xLabel'] + data['datasets'][tooltipItem[0]['datasetIndex']]['label'];
+                                                                                                }
+                                                                                        }
+                                                                                }
+                                                                        }
+                                                                });
+                                                            
+                                                            var graphIncludingPFSemesters = document.getElementById("gradesIncludingPFSemesters").getContext("2d");
+                                                            var gradesGraphIncludingPFSemesters = new Chart(graphIncludingPFSemesters, {
+                                                                    type: 'bar',
+                                                                    data: {
+                                                                            labels: ["A", "B", "C", "D", "F", "W", "other"],
+                                                                            datasets: [
+                                                                                    {
+                                                                                    label: "-",
+                                                                                    data: [16.97, 3.03, 0.00, 0.00],
+                                                                                    backgroundColor: [
+                                                                                            'rgba(58, 215, 65, .4)',
+                                                                                            'rgba(58, 215, 65, .4)',
+                                                                                            'rgba(58, 215, 65, .4)',
+                                                                                            'rgba(58, 215, 65, .4)'
+                                                                                    ],
+                                                                                    borderColor: [
+                                                                                            'rgba(29, 77, 0, 1)',
+                                                                                            'rgba(29, 77, 0, 1)',
+                                                                                            'rgba(29, 77, 0, 1)',
+                                                                                            'rgba(29, 77, 0, 1)'
+                                                                                    ],
+                                                                                    borderWidth: 2
+                                                                                    },
+                                                                                    {
+                                                                                    label: "",
+                                                                                    data: [31.52, 7.27, 1.82, 0.61, 1.82, 3.03, 12.12],
+                                                                                    backgroundColor: [
+                                                                                            'rgba(25, 140, 35, .5)',
+                                                                                            'rgba(25, 140, 35, .5)',
+                                                                                            'rgba(25, 140, 35, .5)',
+                                                                                            'rgba(25, 140, 35, .5)',
+                                                                                            'rgba(226, 0, 0, .7)',
+                                                                                            'rgba(226, 0, 0, .7)',
+                                                                                            'rgba(173, 173, 173, .4)',
+                                                                                    ],
+                                                                                    borderColor: [
+                                                                                            'rgba(29, 77, 0, 1)',
+                                                                                            'rgba(29, 77, 0, 1)',
+                                                                                            'rgba(29, 77, 0, 1)',
+                                                                                            'rgba(29, 77, 0, 1)',
+                                                                                            'rgba(196, 0, 0, 1)',
+                                                                                            'rgba(196, 0, 0, 1)',
+                                                                                            'rgba(29, 77, 0, 1)'
+                                                                                    ],
+                                                                                    borderWidth: 2
+                                                                                    },
+                                                                                    {
+                                                                                    label: "+",
+                                                                                    data: [14.55, 6.67, 0.61, 0.00],
+                                                                                    backgroundColor: [
+                                                                                            'rgba(6, 74, 12, .7)',
+                                                                                            'rgba(6, 74, 12, .7)',
+                                                                                            'rgba(6, 74, 12, .7)',
+                                                                                            'rgba(6, 74, 12, .7)'
+                                                                                    ],
+                                                                                    borderColor: [
+                                                                                            'rgba(29, 77, 0, 1)',
+                                                                                            'rgba(29, 77, 0, 1)',
+                                                                                            'rgba(29, 77, 0, 1)',
+                                                                                            'rgba(29, 77, 0, 1)'
+                                                                                    ],
+                                                                                    borderWidth: 2
+                                                                                    }
+                                                                            ]
+                                                                    },
+                                                                    options: {
+                                                                            aspectRatio: aspectRatio,
+                                                                            title: {
+                                                                                    display: true,
+                                                                                    text: "Mollye Bendell Grade Distribution"
+                                                                            },
+                                                                            scales: {
+                                                                                    xAxes: [{stacked: true}],
+                                                                                    yAxes: [{
+                                                                                            stacked: true,
+                                                                                            scaleLabel: {
+                                                                                                    display: true,
+                                                                                                    labelString: "% of students"
+                                                                                            }}
+                                                                                    ]
+                                                                            },
+                                                                            legend: {
+                                                                                    reverse: true
+                                                                            },
+                                                                            tooltips: {
+                                                                                    callbacks: {
+                                                                                            title: function(tooltipItem, data) {
+                                                                                                    return tooltipItem[0]['xLabel'] + data['datasets'][tooltipItem[0]['datasetIndex']]['label'];
+                                                                                            }
+                                                                                    }
+                                                                            }
+                                                                    }
+                                                            });
+                
+                                                            /* From: https://stackoverflow.com/a/2901298 */
+                                                            function numberWithCommas(x) {
+                                                                    var parts = x.toString().split(".");
+                                                                    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                                                                    return parts.join(".");
+                                                            }
+                
+                                                            var course_grades = {};
+                
+                                                                course_grades['All courses'] = {'SUM(APLUS)': '14.61', 'SUM(A)': '30.34', 'SUM(AMINUS)': '19.10', 'SUM(BPLUS)': '7.87', 'SUM(B)': '10.11', 'SUM(BMINUS)': '3.37', 'SUM(CPLUS)': '1.12', 'SUM(C)': '2.25', 'SUM(CMINUS)': '0.00', 'SUM(DPLUS)': '0.00', 'SUM(D)': '0.00', 'SUM(DMINUS)': '0.00', 'SUM(F)': '3.37', 'SUM(W)': '5.62', 'SUM(OTHER)': '2.25', 'num_students': 89, 'course': 'All courses'};
+                                                            
+                                                            
+                                                                course_grades['ARTT370'] = {'course': 'ARTT370', 'SUM(APLUS)': '11.76', 'SUM(A)': '23.53', 'SUM(AMINUS)': '5.88', 'SUM(BPLUS)': '11.76', 'SUM(B)': '11.76', 'SUM(BMINUS)': '0.00', 'SUM(CPLUS)': '0.00', 'SUM(C)': '5.88', 'SUM(CMINUS)': '0.00', 'SUM(DPLUS)': '0.00', 'SUM(D)': '0.00', 'SUM(DMINUS)': '0.00', 'SUM(F)': '5.88', 'SUM(W)': '17.65', 'SUM(OTHER)': '5.88', 'num_students': 17, 'average_gpa': '2.64'};
+                                                            
+                                                            
+                                                                course_grades['ARTT479D'] = {'course': 'ARTT479D', 'SUM(APLUS)': '13.56', 'SUM(A)': '30.51', 'SUM(AMINUS)': '22.03', 'SUM(BPLUS)': '6.78', 'SUM(B)': '10.17', 'SUM(BMINUS)': '5.08', 'SUM(CPLUS)': '1.69', 'SUM(C)': '1.69', 'SUM(CMINUS)': '0.00', 'SUM(DPLUS)': '0.00', 'SUM(D)': '0.00', 'SUM(DMINUS)': '0.00', 'SUM(F)': '3.39', 'SUM(W)': '3.39', 'SUM(OTHER)': '1.69', 'num_students': 59, 'average_gpa': '3.37'};
+                                                            
+                                                            
+                                                                course_grades['CMSC101'] = {'course': 'CMSC101', 'SUM(APLUS)': '23.08', 'SUM(A)': '38.46', 'SUM(AMINUS)': '23.08', 'SUM(BPLUS)': '7.69', 'SUM(B)': '7.69', 'SUM(BMINUS)': '0.00', 'SUM(CPLUS)': '0.00', 'SUM(C)': '0.00', 'SUM(CMINUS)': '0.00', 'SUM(DPLUS)': '0.00', 'SUM(D)': '0.00', 'SUM(DMINUS)': '0.00', 'SUM(F)': '0.00', 'SUM(W)': '0.00', 'SUM(OTHER)': '0.00', 'num_students': 13, 'average_gpa': '3.80'};
+                                                            
+                                                            
+                                                            $('#includePFSemesters').on('change', function() {
+                                                                    updateCourseGradesGraph();
+                                                            });
+                
+                                                            // Change course on grades option
+                                                            $("#grades-by-course").on('change', function() {
+                                                                    updateCourseGradesGraph();
+                                                            });
+                
+                                                            function updateCourseGradesGraph() {
+                                                                    course_grades = {};
+                
+                                                                    var selected = $('#grades-by-course').val();
+                
+                                                                        if ($('#includePFSemesters').is(':checked')) {
+                                                                                    course_grades['All courses'] = {'SUM(APLUS)': '14.55', 'SUM(A)': '31.52', 'SUM(AMINUS)': '16.97', 'SUM(BPLUS)': '6.67', 'SUM(B)': '7.27', 'SUM(BMINUS)': '3.03', 'SUM(CPLUS)': '0.61', 'SUM(C)': '1.82', 'SUM(CMINUS)': '0.00', 'SUM(DPLUS)': '0.00', 'SUM(D)': '0.61', 'SUM(DMINUS)': '0.00', 'SUM(F)': '1.82', 'SUM(W)': '3.03', 'SUM(OTHER)': '12.12', 'num_students': 165, 'course': 'All courses'};
+                                                                                    course_grades['ARTT370'] = {'course': 'ARTT370', 'SUM(APLUS)': '13.85', 'SUM(A)': '38.46', 'SUM(AMINUS)': '9.23', 'SUM(BPLUS)': '6.15', 'SUM(B)': '4.62', 'SUM(BMINUS)': '1.54', 'SUM(CPLUS)': '0.00', 'SUM(C)': '3.08', 'SUM(CMINUS)': '0.00', 'SUM(DPLUS)': '0.00', 'SUM(D)': '1.54', 'SUM(DMINUS)': '0.00', 'SUM(F)': '1.54', 'SUM(W)': '4.62', 'SUM(OTHER)': '15.38', 'num_students': 65, 'average_gpa': '3.42'};
+                                                                                    course_grades['ARTT479D'] = {'course': 'ARTT479D', 'SUM(APLUS)': '13.79', 'SUM(A)': '25.29', 'SUM(AMINUS)': '21.84', 'SUM(BPLUS)': '6.90', 'SUM(B)': '9.20', 'SUM(BMINUS)': '4.60', 'SUM(CPLUS)': '1.15', 'SUM(C)': '1.15', 'SUM(CMINUS)': '0.00', 'SUM(DPLUS)': '0.00', 'SUM(D)': '0.00', 'SUM(DMINUS)': '0.00', 'SUM(F)': '2.30', 'SUM(W)': '2.30', 'SUM(OTHER)': '11.49', 'num_students': 87, 'average_gpa': '3.44'};
+                                                                                    course_grades['CMSC101'] = {'course': 'CMSC101', 'SUM(APLUS)': '23.08', 'SUM(A)': '38.46', 'SUM(AMINUS)': '23.08', 'SUM(BPLUS)': '7.69', 'SUM(B)': '7.69', 'SUM(BMINUS)': '0.00', 'SUM(CPLUS)': '0.00', 'SUM(C)': '0.00', 'SUM(CMINUS)': '0.00', 'SUM(DPLUS)': '0.00', 'SUM(D)': '0.00', 'SUM(DMINUS)': '0.00', 'SUM(F)': '0.00', 'SUM(W)': '0.00', 'SUM(OTHER)': '0.00', 'num_students': 13, 'average_gpa': '3.80'};
+                                                                        }
+                                                                        else {
+                                                                                    course_grades['All courses'] = {'SUM(APLUS)': '14.61', 'SUM(A)': '30.34', 'SUM(AMINUS)': '19.10', 'SUM(BPLUS)': '7.87', 'SUM(B)': '10.11', 'SUM(BMINUS)': '3.37', 'SUM(CPLUS)': '1.12', 'SUM(C)': '2.25', 'SUM(CMINUS)': '0.00', 'SUM(DPLUS)': '0.00', 'SUM(D)': '0.00', 'SUM(DMINUS)': '0.00', 'SUM(F)': '3.37', 'SUM(W)': '5.62', 'SUM(OTHER)': '2.25', 'num_students': 89, 'course': 'All courses'};
+                                                                                    course_grades['ARTT370'] = {'course': 'ARTT370', 'SUM(APLUS)': '11.76', 'SUM(A)': '23.53', 'SUM(AMINUS)': '5.88', 'SUM(BPLUS)': '11.76', 'SUM(B)': '11.76', 'SUM(BMINUS)': '0.00', 'SUM(CPLUS)': '0.00', 'SUM(C)': '5.88', 'SUM(CMINUS)': '0.00', 'SUM(DPLUS)': '0.00', 'SUM(D)': '0.00', 'SUM(DMINUS)': '0.00', 'SUM(F)': '5.88', 'SUM(W)': '17.65', 'SUM(OTHER)': '5.88', 'num_students': 17, 'average_gpa': '2.64'};
+                                                                                    course_grades['ARTT479D'] = {'course': 'ARTT479D', 'SUM(APLUS)': '13.56', 'SUM(A)': '30.51', 'SUM(AMINUS)': '22.03', 'SUM(BPLUS)': '6.78', 'SUM(B)': '10.17', 'SUM(BMINUS)': '5.08', 'SUM(CPLUS)': '1.69', 'SUM(C)': '1.69', 'SUM(CMINUS)': '0.00', 'SUM(DPLUS)': '0.00', 'SUM(D)': '0.00', 'SUM(DMINUS)': '0.00', 'SUM(F)': '3.39', 'SUM(W)': '3.39', 'SUM(OTHER)': '1.69', 'num_students': 59, 'average_gpa': '3.37'};
+                                                                                    course_grades['CMSC101'] = {'course': 'CMSC101', 'SUM(APLUS)': '23.08', 'SUM(A)': '38.46', 'SUM(AMINUS)': '23.08', 'SUM(BPLUS)': '7.69', 'SUM(B)': '7.69', 'SUM(BMINUS)': '0.00', 'SUM(CPLUS)': '0.00', 'SUM(C)': '0.00', 'SUM(CMINUS)': '0.00', 'SUM(DPLUS)': '0.00', 'SUM(D)': '0.00', 'SUM(DMINUS)': '0.00', 'SUM(F)': '0.00', 'SUM(W)': '0.00', 'SUM(OTHER)': '0.00', 'num_students': 13, 'average_gpa': '3.80'};
+                                                                        }
+                                                                    
+                                                                    var grades = course_grades[selected];
+                
+                                                                    $("html").find('#graph-wrapper').remove();
+                
+                                                                    console.log(grades);
+                
+                                                                    if (grades == null) {
+                                                                            $('#only-pfsemesters').show();
+                                                                    }
+                                                                    else {
+                                                                            $("#grades-graphs").append('<div id="graph-wrapper"><canvas id="grades" style="margin: 0 auto;"></canvas></div>');
+                
+                                                                            $('#only-pfsemesters').hide();
+                
+                                                                            var graph = document.getElementById("grades").getContext("2d");
+                                                                            var gradesGraph = new Chart(graph, {
+                                                                                    type: 'bar',
+                                                                                    data: {
+                                                                                            labels: ["A", "B", "C", "D", "F", "W", "other"],
+                                                                                            datasets: [
+                                                                                                    {
+                                                                                                    label: "-",
+                                                                                                    data: [grades['SUM(AMINUS)'], grades['SUM(BMINUS)'], grades['SUM(CMINUS)'], grades['SUM(DMINUS)']],
+                                                                                                    backgroundColor: [
+                                                                                                            'rgba(58, 215, 65, .4)',
+                                                                                                            'rgba(58, 215, 65, .4)',
+                                                                                                            'rgba(58, 215, 65, .4)',
+                                                                                                            'rgba(58, 215, 65, .4)'
+                                                                                                    ],
+                                                                                                    borderColor: [
+                                                                                                            'rgba(29, 77, 0, 1)',
+                                                                                                            'rgba(29, 77, 0, 1)',
+                                                                                                            'rgba(29, 77, 0, 1)',
+                                                                                                            'rgba(29, 77, 0, 1)'
+                                                                                                    ],
+                                                                                                    borderWidth: 2
+                                                                                                    },
+                                                                                                    {
+                                                                                                    label: "",
+                                                                                                    data: [grades['SUM(A)'], grades['SUM(B)'], grades['SUM(C)'], grades['SUM(D)'], grades['SUM(F)'], grades['SUM(W)'], grades['SUM(OTHER)']],
+                                                                                                    backgroundColor: [
+                                                                                                            'rgba(25, 140, 35, .5)',
+                                                                                                            'rgba(25, 140, 35, .5)',
+                                                                                                            'rgba(25, 140, 35, .5)',
+                                                                                                            'rgba(25, 140, 35, .5)',
+                                                                                                            'rgba(226, 0, 0, .7)',
+                                                                                                            'rgba(226, 0, 0, .7)',
+                                                                                                            'rgba(173, 173, 173, .4)',
+                                                                                                    ],
+                                                                                                    borderColor: [
+                                                                                                            'rgba(29, 77, 0, 1)',
+                                                                                                            'rgba(29, 77, 0, 1)',
+                                                                                                            'rgba(29, 77, 0, 1)',
+                                                                                                            'rgba(29, 77, 0, 1)',
+                                                                                                            'rgba(196, 0, 0, 1)',
+                                                                                                            'rgba(196, 0, 0, 1)',
+                                                                                                            'rgba(29, 77, 0, 1)'
+                                                                                                    ],
+                                                                                                    borderWidth: 2
+                                                                                                    },
+                                                                                                    {
+                                                                                                    label: "+",
+                                                                                                    data: [grades['SUM(APLUS)'], grades['SUM(BPLUS)'], grades['SUM(CPLUS)'], grades['SUM(DPLUS)']],
+                                                                                                    backgroundColor: [
+                                                                                                            'rgba(6, 74, 12, .7)',
+                                                                                                            'rgba(6, 74, 12, .7)',
+                                                                                                            'rgba(6, 74, 12, .7)',
+                                                                                                            'rgba(6, 74, 12, .7)'
+                                                                                                    ],
+                                                                                                    borderColor: [
+                                                                                                            'rgba(29, 77, 0, 1)',
+                                                                                                            'rgba(29, 77, 0, 1)',
+                                                                                                            'rgba(29, 77, 0, 1)',
+                                                                                                            'rgba(29, 77, 0, 1)'
+                                                                                                    ],
+                                                                                                    borderWidth: 2
+                                                                                                    }
+                                                                                            ]
+                                                                                    },
+                                                                                    options: {
+                                                                                            aspectRatio: aspectRatio,
+                                                                                            title: {
+                                                                                                    display: true,
+                                                                                                    text: (selected === "All courses") ? "Mollye Bendell Grade Distribution" : "Mollye Bendell Grade Distribution for " + selected
+                                                                                            },
+                                                                                            scales: {
+                                                                                                    xAxes: [{stacked: true}],
+                                                                                                    yAxes: [{
+                                                                                                            stacked: true,
+                                                                                                            scaleLabel: {
+                                                                                                                    display: true,
+                                                                                                                    labelString: "% of students"
+                                                                                                            }}
+                                                                                                    ]
+                                                                                            },
+                                                                                            legend: {
+                                                                                                    reverse: true
+                                                                                            },
+                                                                                            animation: {
+                                                                                                    duration: 0
+                                                                                            },
+                                                                                            tooltips: {
+                                                                                                    callbacks: {
+                                                                                                            title: function(tooltipItem, data) {
+                                                                                                                    return tooltipItem[0]['xLabel'] + data['datasets'][tooltipItem[0]['datasetIndex']]['label'];
+                                                                                                            }
+                                                                                                    }
+                                                                                            }
+                                                                                    }
+                                                                            });
+                
+                                                                            if (selected === "All courses") {
+                                                                                    if ($('#includePFSemesters').is(':checked')) {
+                                                                                            $('#grade-statistics').text("Average GPA^: 3.47 between 165 students*")
+                                                                                    }
+                                                                                    else {
+                                                                                            $('#grade-statistics').text("Average GPA^: 3.30 between 89 students*")
+                                                                                    }
+                                                                            }
+                                                                            else {
+                                                                                    console.log('hi');
+                                                                                    $('#grade-statistics').text("Average GPA^ for " + selected + ": " + grades.average_gpa + " between " + numberWithCommas(grades.num_students) + " students*")
+                                                                            }
+                                                                    }
+                                                            }
+                                                    </script>
+<small>^ "W"s are considered to be 0.0 quality points. "Other" grades are not factored into the average GPA calculation.</small><br />
+<small>* Grade data is not guaranteed to be correct.</small>
+</div>
+</div>
+</div>
+</div>
+<footer id="page-footer" class="text-center w-100">
+<div class="footer-color">
+<a href="/setcolorscheme/0" title="Set color scheme to light."><span class="set-color-scheme" id="color-scheme-default"></span></a>
+<a href="/setcolorscheme/1" title="Set color scheme to dark."><span class="set-color-scheme" id="color-scheme-dark"></span></a>
+</div>
+<div style="position: relative; top: 15px;" class="copyright-text">
+Copyright &copy; 2017 &mdash; 2021 PlanetTerp
+<div class="footer-info">
+<a href="/privacypolicy">Privacy Policy</a> | <a href="/termsofuse">Terms of Use</a>
+</div>
+</div>
+</footer>
+<script type="cde8835547f5668d7588873a-text/javascript">
+                        const columns = [COLUMN.INFORMATION, COLUMN.REVIEW];
+                        const reviews = [{"id": "review-1", "professor_id": 6344, "course_id": 8034, "review": "Absolutely wonderful professor. I think she just started teaching but she&#x27;s extremely knowledgeable in Maya, Unity, and a lot of other software. She&#x27;s very lenient with late work as long as you push yourself to do well you&#x27;ll get a good grade. ", "reviewer_id": 977, "reviewer_name": "Anonymous", "rating": 5, "expected_grade": "A", "from_ourumd": 0, "created": "02/01/2021", "verified": 1, "updated_by": 832, "last_updated": "02/01/2021", "department": "ARTT", "course_number": "479D", "title": "Advanced Digital Media Studio; Immersive and Virtual Environments", "credits": 3, "description": "<i>\n<b>Prerequisite:</b> ARTT370 or permission of Department. Introduction to the uses of game development software in an artistic context. Practical examination of interactive, immersive and installation art as mediated through the context of real-time computer generated imagery and game engine methodologies. Students must pay a $40.00 studio lab fee.</i>"}];
+
+                        $(function() {
+                                generateTable(reviews, "reviews-table-container", columns);
+                                $("#num-reviews").html(`${reviews.length} review${reviews.length == 1 ? '' : 's'}`);
+                        });
+
+                        $("#course").on('change', function() {
+                                if ($(this).val() == "other")
+                                        $("#other-course-container").show();
+                                else
+                                        $("#other-course-container").hide();
+                        });
+
+                        // https://github.com/apluslms/js-jquery-toggle
+                        $("#rating-sort").replaceInputsWithMultiStateButtons({
+                                font_awesome: true,
+                                icon_0: "fas fa-sort",
+                                icon_1: "fas fa-sort-down",
+                                icon_2: "fas fa-sort-up",
+                                color_0: "secondary",
+                                color_1: "secondary",
+                                color_2: "secondary"
+                        });
+
+                        $("#course-select").on('change', function() {
+                                var selectedCourse = $(this).val();
+
+                                $("#reviews-table-container tbody tr").each(function() {
+                                        var currentCourse = $.trim($(this).find('.course').text());
+
+                                        if (selectedCourse == "Course" || currentCourse == selectedCourse)
+                                                $(this).show();
+                                        else
+                                                $(this).hide();
+                                });
+                        });
+
+                        var isClosed = true;
+                        $("#review-btn").click(function() {
+                                $("#review-form-container").animate({height: 'toggle', opacity: 'toggle' }, 'slow');
+
+                                var el = document.getElementById("review-btn");
+                                if (isClosed) {
+                                        el.style.animation = "opening 0.5s linear";
+                                        setTimeout('$("#review-form-container").css("display", "grid");', 550); // 0.55 seconds
+
+                                } else {
+                                        el.style.animation = "closing 0.5s linear";
+                                        setTimeout('$("#review-form-container").css("display", "none");', 550);
+                                }
+
+                                el.style.animationFillMode = "forwards";
+                                isClosed = !isClosed
+                        });
+
+                        $("#rating-select").on("change", function() {
+                                var selectedRating = $(this).val();
+                                var hiddenReviews = [];
+
+                                $("#reviews-table-container tbody tr:hidden").each(function() {
+                                        var id = $(this).attr("id");
+                                        hiddenReviews.push(id);
+                                });
+
+                                var reviews_ = reviews;
+
+                                if (selectedRating == "1") {
+                                        reviews_ = sortReviews(reviews_, sort="desc");
+                                }
+                                if (selectedRating == "2") {
+                                        reviews_ = sortReviews(reviews_, sort="asc");
+                                }
+
+                                generateTable(reviews_, "reviews-table-container", columns, hiddenReviews);
+                        });
+                </script>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="cde8835547f5668d7588873a-|49" defer=""></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v64f9daad31f64f81be21cbef6184a5e31634941392597" integrity="sha512-gV/bogrUTVP2N3IzTDKzgP0Js1gg4fbwtYB6ftgLbKQu/V8yH2+lrKCfKHelh4SO3DPzKj4/glTO+tNJGDnb0A==" data-cf-beacon='{"rayId":"6b9865f7a9c75908","version":"2021.11.0","r":1,"token":"517b770786dc4bfaa7a6af06bd912f09","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>
