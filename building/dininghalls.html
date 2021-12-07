@@ -400,7 +400,267 @@
                                     location.reload();
                             }
                     </script>
+
+                    <script type="cde8835547f5668d7588873a-text/javascript" src="../static/js/jquery-toggle.js"></script>
+                    <script type="cde8835547f5668d7588873a-text/javascript" src="../static/js/review-table.js"></script>
+                    <br />
+                    <div class="container mw-100 px-5">
+                    <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6 offset-md-1">
+                    <h1 class="professor-header"><strong>Dining Halls</strong></h1>
+                    <h5 id="num-reviews">2 review</h5>
+                    <h5>Average rating: 3.5</h5>
+                    <span style="white-space: nowrap;">
+                    
+                    <i class="fas fa-star fa-2x">
+                    
+                    </i>
+                    <i class="far fa-star fa-2x" style="margin-top: 4px;"></i>
+                    <i class="fas fa-star fa-2x"></i>
+                    <i class="far fa-star fa-2x"></i>
+                    <i class="fas fa-star fa-2x"></i>
+                    <i class="far fa-star fa-2x"></i>
+                    <i class="fas fa-star fa-2x"></i>
+                    <i class="far fa-star fa-2x"></i>
+                    <i class="fas fa-star fa-2x"></i>
+                    <i class="far fa-star fa-2x"></i>
+                    <style>
+                           i.fas.fa-star.professor-rating:after {
+                                                                 width: 100.0%;
+                                                                 left: 0.0%;
+                                                                        }
+                    </style>
+                    </span>
+                    </div>
+                    
+                    </div>
+                    </div>
+                    <div class="review-container mb-3" style="text-align: center;">
+                    <button id="review-btn" class="btn btn-primary" style="animation: 0.5s linear 0s 1 normal forwards running opening;">Review this building</button>
+                    <div id="review-form-container" style="display: grid;">
+                    
+                        <form method="POST" id="building-form">
+                    
+                            <div id="form-success" class="alert alert-success text-center">
+                                <span class="my-0 close-btn float-right fas fa-times"></span>
+                        
+                                <strong>Successfully submitted review.</strong> We will verify your review soon.
+                    <br />
+                            </div>
+                    
+                    <div id="other-errors" class="alert alert-danger" style="cursor: default;">
+                    <span class="my-0 close-btn float-right fas fa-times"></span>
+                    <div></div>
+                    </div>
+                    <div style="border-radius: 0;" class="alert alert-primary center-text info-alert w-100" role="alert">
+                    <strong>Note:</strong> <a href="/login" target="_blank">Register</a> to save your reviews to an account and to put a username next to your reviews
+                    </div>
+                    <div class="p-2">
+                    <div id="review-left-wrapper" class="noselect">
+                    <input type="hidden" name="slug" value="bendell"></input>
+                    
+                    <div id="course-errors" class="invalid-feedback review-error text-left"></div>
+                    <div id="other-course-container" style="display: none;" class="pt-3">
+                    <input class="form-control form-control-sm" id="other-course" name="other_course" type="text" size="10" placeholder="Please Specify...">
+                    <div id="other-course-errors" class="invalid-feedback review-error text-left"></div>
+                    </div>
+                    
+                    
+                    <div class="py-3">
+                        <div id="rateYo" style="padding: 0px; width: 135.788px;" class="jq-ry-container"><div class="jq-ry-group-wrapper"><div class="jq-ry-normal-group jq-ry-group"><!--?xml version="1.0" encoding="utf-8"?--><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 12.705 512 486.59" x="0px" y="0px" xml:space="preserve" width="27.157599999999995px" height="27.157599999999995px" fill="gray"><polygon points="256.814,12.705 317.205,198.566 512.631,198.566 354.529,313.435 414.918,499.295 256.814,384.427 98.713,499.295 159.102,313.435 1,198.566 196.426,198.566 "></polygon></svg><!--?xml version="1.0" encoding="utf-8"?--><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 12.705 512 486.59" x="0px" y="0px" xml:space="preserve" width="27.157599999999995px" height="27.157599999999995px" fill="gray" style="margin-left: 0px;"><polygon points="256.814,12.705 317.205,198.566 512.631,198.566 354.529,313.435 414.918,499.295 256.814,384.427 98.713,499.295 159.102,313.435 1,198.566 196.426,198.566 "></polygon></svg><!--?xml version="1.0" encoding="utf-8"?--><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 12.705 512 486.59" x="0px" y="0px" xml:space="preserve" width="27.157599999999995px" height="27.157599999999995px" fill="gray" style="margin-left: 0px;"><polygon points="256.814,12.705 317.205,198.566 512.631,198.566 354.529,313.435 414.918,499.295 256.814,384.427 98.713,499.295 159.102,313.435 1,198.566 196.426,198.566 "></polygon></svg><!--?xml version="1.0" encoding="utf-8"?--><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 12.705 512 486.59" x="0px" y="0px" xml:space="preserve" width="27.157599999999995px" height="27.157599999999995px" fill="gray" style="margin-left: 0px;"><polygon points="256.814,12.705 317.205,198.566 512.631,198.566 354.529,313.435 414.918,499.295 256.814,384.427 98.713,499.295 159.102,313.435 1,198.566 196.426,198.566 "></polygon></svg><!--?xml version="1.0" encoding="utf-8"?--><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 12.705 512 486.59" x="0px" y="0px" xml:space="preserve" width="27.157599999999995px" height="27.157599999999995px" fill="gray" style="margin-left: 0px;"><polygon points="256.814,12.705 317.205,198.566 512.631,198.566 354.529,313.435 414.918,499.295 256.814,384.427 98.713,499.295 159.102,313.435 1,198.566 196.426,198.566 "></polygon></svg></div><div class="jq-ry-rated-group jq-ry-group" style="width: 0%;"><!--?xml version="1.0" encoding="utf-8"?--><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 12.705 512 486.59" x="0px" y="0px" xml:space="preserve" width="27.157599999999995px" height="27.157599999999995px" fill="gold"><polygon points="256.814,12.705 317.205,198.566 512.631,198.566 354.529,313.435 414.918,499.295 256.814,384.427 98.713,499.295 159.102,313.435 1,198.566 196.426,198.566 "></polygon></svg><!--?xml version="1.0" encoding="utf-8"?--><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 12.705 512 486.59" x="0px" y="0px" xml:space="preserve" width="27.157599999999995px" height="27.157599999999995px" fill="gold" style="margin-left: 0px;"><polygon points="256.814,12.705 317.205,198.566 512.631,198.566 354.529,313.435 414.918,499.295 256.814,384.427 98.713,499.295 159.102,313.435 1,198.566 196.426,198.566 "></polygon></svg><!--?xml version="1.0" encoding="utf-8"?--><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 12.705 512 486.59" x="0px" y="0px" xml:space="preserve" width="27.157599999999995px" height="27.157599999999995px" fill="gold" style="margin-left: 0px;"><polygon points="256.814,12.705 317.205,198.566 512.631,198.566 354.529,313.435 414.918,499.295 256.814,384.427 98.713,499.295 159.102,313.435 1,198.566 196.426,198.566 "></polygon></svg><!--?xml version="1.0" encoding="utf-8"?--><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 12.705 512 486.59" x="0px" y="0px" xml:space="preserve" width="27.157599999999995px" height="27.157599999999995px" fill="gold" style="margin-left: 0px;"><polygon points="256.814,12.705 317.205,198.566 512.631,198.566 354.529,313.435 414.918,499.295 256.814,384.427 98.713,499.295 159.102,313.435 1,198.566 196.426,198.566 "></polygon></svg><!--?xml version="1.0" encoding="utf-8"?--><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 12.705 512 486.59" x="0px" y="0px" xml:space="preserve" width="27.157599999999995px" height="27.157599999999995px" fill="gold" style="margin-left: 0px;"><polygon points="256.814,12.705 317.205,198.566 512.631,198.566 354.529,313.435 414.918,499.295 256.814,384.427 98.713,499.295 159.102,313.435 1,198.566 196.426,198.566 "></polygon></svg></div></div></div>
+                        <div id="rating-errors" class="invalid-feedback review-error text-left"></div>
+                        </div>
+                        <input type="hidden" name="rating" id="rating">
+                        <button class="btn btn-warning w-100" type="submit">Submit</button>
+                    </div>
+                    <div id="review-right-wrapper">
+                        <textarea name="review_text" id="review-text" class="form-control form-control-sm" placeholder="Let it all out..." style="height: 194px; border-bottom-left-radius: 0.25rem;"></textarea>
+                        <div style="font-size: 1rem; width: fit-content;" id="review-text-errors" class="invalid-feedback review-error"></div>
+                        </div>
+                        <input type="hidden" name="form_type" id="form_type" value="review_prof">
+                    
+                    </form>
+                    
+                    
+                    <script type="text/javascript">
+                        $(function() {
+                            var multiplier;
+                    
+                            multiplier = 3.1;
+                            $("#other-errors").css({"position" : "absolute", "z-index" : "1", "cursor" : "default"});
+                            $("#review-right-wrapper > textarea").height("11.5rem");
+                            $("#review-right-wrapper > textarea").css("border-bottom-left-radius", "0.25rem");
+                            var init_starWidth = ((window.innerWidth * multiplier)/100) + "px";
+                            $("#rateYo").rateYo("option", "starWidth", init_starWidth);
+                        });
+                    
+                        $(".close-btn").click(function() {
+                            $(this).parent().slideToggle(500);
+                        });
+                    
+                        $(window).resize(function() {
+                            var starWidth = $("#review-left-wrapper").width() / 5;
+                    
+                            if (starWidth < 20) {
+                                starWidth = 20;
+                            }
+                            $("#rateYo").rateYo("option", "starWidth", starWidth + "px");
+                        });
+                    
+                        $("#professor-form").submit(
+                            function(e) {
+                                var data = {}
+                    
+                                var dataArr = $("#professor-form :input").serializeArray();
+                                dataArr.forEach(function(entry) {
+                                    if (entry.value == "") {
+                                        entry.value = null;
+                                    }
+                                    data[entry.name] = entry.value;
+                                });
+                    
+                                // jquery only includes checkboxes in serializeArray when they're checked, so
+                                // manually include it if it's not there (and convert to booleans while we're at it).
+                                if (!("anonymous" in data)) {
+                                    data["anonymous"] = false
+                                } else {
+                                    data["anonymous"] = true
+                                }
+                    
+                                $.ajax({
+                                    type: "POST",
+                                    url: "/add_review",
+                                    data: JSON.stringify(data),
+                                    success: function(data) {
+                                        $("#review-text").val("");
+                                        $("#course").val("");
+                                        $("#grade").val("");
+                                        $(".review-error").html("");
+                                        $("#name").val("");
+                                        $("#type").val("");
+                                        $("#other-course-container").hide();
+                                        $("#rateYo").rateYo("rating", 0);
+                                        $("#rateYo").css("border-style", "none");
+                                        $("#professor-form :input").removeClass("is-invalid");
+                    
+                                        $(".other-course").hide();
+                                        $("#other-course").val("");
+                                        
+                                        $("#form-success").hide().slideToggle(1000);
+                                    },
+                                    error: function(data) {
+                                        var errors = JSON.parse(data.responseText);
+                                        var fieldList = ["review-text", "course", "grade", "other-course"];
+                    
+                                        fieldList.forEach(function(key) {
+                                            // the json response uses underscores in place of dashes (dashes aren't valid
+                                            // python identifiers), so replace with underscores when looking for them.
+                                            let indexKey = key.replace("-", "_")
+                                            if (errors[indexKey] != null) {
+                                                $(`#${key}-errors`).html(errors[indexKey]);
+                                                $(`#${key}`).addClass("is-invalid");
+                                            } else {
+                                                $(`#${key}-errors`).html("");
+                                                $(`#${key}`).removeClass("is-invalid");
+                                            }
+                                        });
+                    
+                                        if (errors["rating"] != null) {
+                                            $("#rateYo").css({"border-style" : "solid", "border-width" : "0.1rem", "border-radius" : "0.2rem", "border-color" : "#dc3545"});
+                                            $("#rating-errors").html(errors["rating"]);
+                                            $("#rating-errors").show(errors["rating"]);
+                                        } else {
+                                            $("#rateYo").css("border-style", "none");
+                                            $("#rating-errors").html("");
+                                            $("#rating-errors").hide(errors["rating"]);
+                                        }
+                    
+                                        if (errors["other_errors"] != null) {
+                                            $("#other-errors div").html(errors["other_errors"]);
+                                            $("#other-errors").hide().slideToggle(1000);
+                                        }
+                                    }
+                                });
+                            e.preventDefault();
+                        });
+                    
+                    </script>
+                    </div>
+                    </div>
+                    <div>
+                     <div class="input-group ml-3">
+                    <div class="input-group-prepend">
+                    <label class="input-group-text" for="course-select" style="border-bottom-left-radius: 0;">Sort By:</label>
+                    </div>
+                    
+                    <div id="rating-sort" class="input-group-append">
+                    <select name="rating-select" id="rating-select" class="d-none">
+                    <option value="0">Rating</option>
+                    <option value="1">Rating</option>
+                    <option value="2">Rating</option>
+                     </select>
+                    </div>
+                    </div>
+                    </div>
+                    
+                    <div id="reviews-table-container">
+                        <table class="table reviews-table">
+                            <thead>
+                        <tr><th scope="col" class="review-table-information">Information</th><th scope="col" class="review-table-review">Review</th>
+                            </tr></thead>
+                            <tbody>
+                        <tr id="review-1">
+                            <td style="white-space: nowrap;">
+                            
+                            
+                            <span class="rating"><i style="margin-top:4px;" class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i style="margin-top:4px;" class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i style="margin-top:4px;" class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i style="margin-top:4px;" class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i style="margin-top:4px;" class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    </span> <br>
+                                            Anonymous
+                                            <br> 
+                                            10/22/2021
+                                            <i class="fal fa-bacterium" data-toggle="tooltip" data-placement="right" title="" data-original-title="This review was submitted while most classes were online during the COVID-19 pandemic. The review may not be indicative of a regular semester."></i>
+                                        </td>
+                                         
+                                         <td style="white-space: pre-line;">Decent food, not the best, not the worst. </td>
+                                        </tr>
+                            
+                                        <tr id="review-2">
+                                            <td style="white-space: nowrap;">
+                                            
+                                            
+                                            <span class="rating"><i style="margin-top:4px;" class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i style="margin-top:4px;" class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i style="margin-top:4px;" class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i style="margin-top:4px;" class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i style="margin-top:4px;" class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    </span> <br>
+                                                            Anonymous
+                                                            <br> 
+                                                            9/15/2021
+                                                            <i class="fal fa-bacterium" data-toggle="tooltip" data-placement="right" title="" data-original-title="This review was submitted while most classes were online during the COVID-19 pandemic. The review may not be indicative of a regular semester."></i>
+                                                        </td>
+                                                         
+                                                         <td style="white-space: pre-line;">For college food, it is what it is. Freshman 15 is a lie call it more like freshman 25. Haha. </td>
+                                                        </tr>
+                            </tbody>
+                        </table>
+                        </div>
     <div class="info-page">
+
 <p>
 <img src="static/images/dining1.jpg"  width="700" height="525" ></img>
 <img src="static/images/dining2.jpg"  width="700" height="525" ></img>
