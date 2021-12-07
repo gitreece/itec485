@@ -32,53 +32,6 @@
     <link rel="stylesheet" type="text/css" href="../static/css/progressbar.css">
     <link rel="stylesheet" type="text/css" href="../static/fontawesome-5.15.3/css/all.min.css">
 
-    <script type="70f1f96066a753c1aee5b087-text/javascript">
-                            // (function(d, s, id) {
-                            // var js, fjs = d.getElementsByTagName(s)[0];
-                            //      if (d.getElementById(id)) return;
-                            //      js = d.createElement(s); js.id = id;
-                            //      js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=396580890766412';
-                            //      fjs.parentNode.insertBefore(js, fjs);
-                            // }(document, 'script', 'facebook-jssdk'));
-
-
-                            /* Track outbound clicks */
-                            /* from: https://support.google.com/analytics/answer/7478520 */
-                            var trackOutboundLink = function(url) {
-                                    gtag('event', 'click', {
-                                            'event_category': 'outbound',
-                                            'event_label': url,
-                                            'transport_type': 'beacon'
-                                            // 'event_callback': function(){document.location = url;}
-                            });
-                            }
-
-                            /* Modified from: https://millionclues.com/internet/tracking-outbound-links-google-analytics/ (partially from https://stackoverflow.com/a/8496919/8255629) */
-                            function onclickCallback(e) {
-                                    var e = window.e || e;
-
-                                    var target = e.target;
-
-                                    /* If clicked on an image, get the parent element, which
-                                    should be an anchor element */
-                                    if (target.tagName === 'IMG') {
-                                            target = target.parentElement;
-                                    }
-
-                                    if ((target.tagName !== 'A') || (target.host == window.location.host)) {
-                                            return;
-                                    }
-
-                                    trackOutboundLink(target); // GA event tracker
-                            }
-
-                            if (document.addEventListener) {
-                                    document.addEventListener('click', onclickCallback, false);
-                            }
-                            else {
-                                    document.attachEvent('onclick', onclickCallback);
-                            }
-                    </script>
 
     <script type="text/javascript">
                             $(function () {
